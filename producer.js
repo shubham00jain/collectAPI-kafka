@@ -1,7 +1,8 @@
 const kafka =  require('kafka-node');
 const response = require('./getRecentResponse');
+require('dotenv').config();
 
-const client = new kafka.KafkaClient("http://localhost:2181", "my-client-id", {
+const client = new kafka.KafkaClient(`http://${process.env.KAFKA_HOST}`, "my-client-id", {
     sessionTimeout: 300,
     spinDelay: 100,
     retries: 2
@@ -53,7 +54,7 @@ const KafkaService = {
         // Create a new payload
         const record = [
             {
-                topic: "webevents.dev",
+                topic: `${process.env.KAFKA_TOPIC}`,
                 messages: buffer,
                 attributes: 1 /* Use GZip compression for the payload */
             }

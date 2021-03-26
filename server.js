@@ -1,7 +1,9 @@
 const producer = require('./producer');
 const axios = require('axios');
 const CronJob = require('node-schedule');
+require('dotenv').config();
 
+// Cron calls the producer after every 10 seconds
 const job = CronJob.scheduleJob('*/10 * * * * *', function() {
-    producer.KafkaService.sendRecord('"mcGkTHWMPSoHGYXfzjWD"', "747e298d99dab12b80d0b81013a6542b", axios);
+    producer.KafkaService.sendRecord(`${process.env.FORM_ID}`, `${process.env.SECRET}`, axios);
 })
