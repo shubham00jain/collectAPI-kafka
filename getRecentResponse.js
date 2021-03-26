@@ -16,4 +16,19 @@ const getRecentResponse = async (formID, Secret, httpClient) => {
     }
 }
 
+const getRecentResponseId = async (formID, Secret, httpClient) => {
+
+    try{
+            const response = await getRecentResponse(formID, Secret, httpClient);
+            const responseId = response[0]['responseId'];
+            console.log(responseId);
+            return responseId;
+    }
+
+    catch(err){
+        console.error(err);
+    }
+}
+
 exports.getRecentResponse = getRecentResponse;
+exports.getRecentResponseId = getRecentResponseId;
