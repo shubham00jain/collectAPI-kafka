@@ -11,10 +11,13 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
+    "cron": "^1.8.2",
     "express": "^4.17.1",
+    "googleapis": "^68.0.0",
     "kafka-node": "^5.0.0",
     "kafkajs": "^1.15.0",
     "mongoose": "^5.12.2",
+    "node-schedule": "^2.0.0",
     "uuid": "^8.3.2"
   }
 }

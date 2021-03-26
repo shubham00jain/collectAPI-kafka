@@ -1,6 +1,5 @@
 const kafka =  require('kafka-node');
-const axios = require('axios');
-const test = require('./test');
+const response = require('./getRecentResponse');
 
 const client = new kafka.KafkaClient("http://localhost:2181", "my-client-id", {
     sessionTimeout: 300,
@@ -9,6 +8,7 @@ const client = new kafka.KafkaClient("http://localhost:2181", "my-client-id", {
 });
 
 const producer = new kafka.HighLevelProducer(client);
+
 producer.on("ready", function() {
     console.log("Kafka Producer is connected and ready.");
 });
@@ -18,18 +18,34 @@ producer.on("error", function(error) {
     console.error(error);
 });
 
-const KafkaService = {
-    sendRecord: ({ nameOfRespondant,gender,age,hobbies,phone,location,data }, callback = () => {}) => {
+let lastResponseID = "";
 
+const KafkaService = {
+    sendRecord: async function (formID, Secret, httpClient ) {
+
+        const newResponse = await response.getRecentResponse( formID, Secret, httpClient);          
+        
+        if (lastResponseID != newResponse[0]['responseId']) {
+            lastResponseID = newResponse[0]['responseId'];
+        } else {
+            return;
+        }
+
+        console.log("[Producer] publishing log for response with response-id: ", lastResponseID)
+
+        if (!newResponse) {
+            console.log("New Response not Found!");
+            return;
+        }
         const event = {
             timestamp: Date.now(),
-            nameOfRespondant: nameOfRespondant,
-            gender: gender,
-            age:age,
-            hobbies:hobbies,
-            phone:phone,
-            location:location,
-            data: data
+            nameOfRespondant: newResponse[0],
+            gender: newResponse[1],
+            age: newResponse[2],
+            hobbies: newResponse[3],
+            phone: newResponse[4],
+            location: newResponse[5],
+            //data: data
         };
 
         const buffer = new Buffer.from(JSON.stringify(event));
@@ -44,8 +60,12 @@ const KafkaService = {
         ];
 
         //Send record to Kafka and log result/error
-        producer.send(record, callback);
+        producer.send(record, function(err, data){
+            if (String(err) != 'null') {
+                console.log("[Producer] unable to send the log with error: ", err)
+            }
+        });
     }
 };
 
-module.exports = KafkaService;
+exports.KafkaService = KafkaService;

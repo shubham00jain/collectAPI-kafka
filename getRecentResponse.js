@@ -5,9 +5,8 @@ const getRecentResponse = async (formID, Secret, httpClient) => {
                 'Authorization' : `Bearer ${Secret}`
             }
         })
-        
+
         const recentResponse = res.data['_items'][0]['answers'];
-        console.log(recentResponse);
         return recentResponse; 
     }
     
