@@ -1,8 +1,8 @@
 {
-  "name": "Codebase",
+  "name": "MiddleMonster",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,12 +13,8 @@
     "axios": "^0.21.1",
     "cron": "^1.8.2",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "googleapis": "^68.0.0",
+    "googleapis": "^39.2.0",
     "kafka-node": "^5.0.0",
-    "kafkajs": "^1.15.0",
-    "mongoose": "^5.12.2",
-    "node-schedule": "^2.0.0",
-    "uuid": "^8.3.2"
+    "node-schedule": "^2.0.0"
   }
 }

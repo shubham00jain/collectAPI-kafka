@@ -1,11 +1,12 @@
 const kafka =  require('kafka-node');
-const response = require('./getRecentResponse');
-require('dotenv').config();
+const response = require('./util/getRecentResponse');
+const config  = require('./config');
 
-const client = new kafka.KafkaClient(`http://${process.env.KAFKA_HOST}`, "my-client-id", {
+// Creating the Kafka Client.
+const client = new kafka.KafkaClient(`http://${config.KafkaHost}`, 1, {
     sessionTimeout: 300,
     spinDelay: 100,
-    retries: 2
+    retries: 2,
 });
 
 const producer = new kafka.HighLevelProducer(client);
@@ -14,13 +15,14 @@ producer.on("ready", function() {
     console.log("Kafka Producer is connected and ready.");
 });
 
-// For this demo we just log producer errors to the console.
+// This logs producer error to the console.
 producer.on("error", function(error) {
     console.error(error);
 });
 
 let lastResponseID = "";
 
+// The logic for Kafka producer.
 const KafkaService = {
     sendRecord: async function (formID, Secret, httpClient ) {
 
@@ -35,7 +37,7 @@ const KafkaService = {
         console.log("[Producer] publishing log for response with response-id: ", lastResponseID)
 
         if (!newResponse) {
-            console.log("New Response not Found!");
+            console.log("New Response not Found.");
             return;
         }
         const event = {
@@ -54,7 +56,7 @@ const KafkaService = {
         // Create a new payload
         const record = [
             {
-                topic: `${process.env.KAFKA_TOPIC}`,
+                topic: `${config.KafkaTopic}`,
                 messages: buffer,
                 attributes: 1 /* Use GZip compression for the payload */
             }

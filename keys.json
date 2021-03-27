@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "atlan-308820",
+  "private_key_id": "50f126e88ffad00a8e96487091b29b9a4786a15b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDAk/TX7IzEHwIT\nVfuOB9QiE80qowwM5nTwkNZUHus8yl061Y7EnEJDSZXoObb9bfkNxnYL0yW6yj7J\nvjQJoL3Staex7muXG8qfkDDepcPyljQgh5TdpUvOjue4XUJJcSZed3t7aOXsPKFe\n+DfxgBBitEs0zt+x7BCUCCGc27nn/fpK9uzNOZtCr9RrAYtFlFf9CHHf4SoYQVsT\nB22I6H55mKEfg1OyLjhsFwyn5Cvp2Uw1EPcSvFCsui3JZ0c3hdaMLE40E2G8vGRs\nk0t8DwQ8CIRhU2whBlDs3bSckX3tGV0Eiya6kk4ZRDd64rlhvCp81zmhFdlvHVRA\nfy0DEpCnAgMBAAECggEAP1Xp5sHjofTYx+c1bobgm7yLc4RgSDXbK+tWsh/hGgMs\nGld2Nu91U4/1/4RLzJnImWE2Hbl55S7y64Lktm3pQE2CM6DIPdBkGYpgqDk4cqY3\nyqMMsMDWZ77UMuxpCqJuDg+ZywK667EdGZDlRUXrHatSOLH5HBkZcrYh5+bUA5oO\n1PHtjTWg3ts2B5O43KS/IzrxmBsBRmO+s4SGE+y5CEntjbYSoDEqVldSP/JQrq5m\niJjEPRWpGrFCqZRxCRXGgYlunyYKBvHSOkQpjN2mKDVO8i0X2qw6AtDvmD3UBnaU\npbW6LXgCTl1GTsyINkz4N8HBy/DEIfMpxdkiHxmyEQKBgQD9CH49o9rzSmDRalEp\nmQgrvRdqMwbdRa5V6B8C0l8BGU8ML7rzW0CXdDWyNvsK25mRZ/M8cdwhiQXounxB\nJaAfm64vxaTcvYuJyrRi8zh+2xwjWXyQwtDTH9jJchhjLhi6ehW8BDHDYufH0ovJ\nfR7n7utbVRO5oRTChPe7zICq1QKBgQDC1gAT6e6I8OuKv8V+b6VtH34AfSu2oaDb\nIZr7j7aKT2kU8+ufqlUATNRmchd3Xe6F6Y7umsWl+l4MocEE0QnZiKnTK77dx1im\n/UvfF4QIsauom8G9LdghARPOw/rrI5g+0R+L4gkIoSE1b1fT5oxRJ5aSbeYkDF+D\nZY0w7mgTiwKBgQCJ0sN4bbTICf5ccs2Mm+dgc5m6ZdraUacY8dtaXR4UaiWtXJ43\nCcBP/qN01A+/pUerdPR/OwGNXqZSUql1jrn+HX0uVjhrZ+8GedvxfcuLBWv5MTfx\nXbwDE3iwmS4Bb81WXUNTavF0HH5lUCCF+loIORIHaHrbBItbPLP3nfeDlQKBgDp9\n+pn/4e/UvDH0brsNk5FWIgLNkUEL9vmydg/NzlRpkLeMnxFZFpm3dxCmcesRFRm4\ny4NQjcPNjUynhwYGJ7nZ8HoIKQ312eSQKKX6LlZZ2JoO4LQFvlvyMdsiNQNAtWUu\nbRUWr/WaQhkDq09faIK4qtidC7mIyWfuJdwpxq8PAoGBALfHIyivNdgDwbdMTRP3\nW8yt6+KEU94mSAiiPJ6d2AzKXEFpBdcc3geI3YfvMQuTEDqz2aS522uodh91EA+a\n/8lCfwmQpvu/tfvrFzVGdn5rign8iLft+FiiRR+P/rrmCRjAp2XY3fWglZrz5Z6G\nMzc2NsStOyNIeeDlFexKeb9O\n-----END PRIVATE KEY-----\n",
+  "client_email": "atlan-test@atlan-308820.iam.gserviceaccount.com",
+  "client_id": "102718252257509451390",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/atlan-test%40atlan-308820.iam.gserviceaccount.com"
+}
