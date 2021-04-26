@@ -1,14 +1,9 @@
-# Atlan Backend Task
-
-![](/home/shubham/Downloads/Atlan Backend project(2)(1).png)
-
+# COllect API Kafka broker
 
 
 This is a microservice called **Middle Monster** which **GETS** data from the Collect APIs servers and then a **producer** works on the data and **publishes** it to a **kafka broker**. The **consumers** then can subscribe to a particular topic of the broker and consume the data as per their need.
 
 This approach seperates the producer and consumer and therefore third party consumers can easily work in a **plug-and-play** fashion by listening to any topic and streaming data from it.
-
-
 
 ## Implementation
 
@@ -18,20 +13,13 @@ This approach seperates the producer and consumer and therefore third party cons
 * In **consumer.js** file, the the consumer first listens to the topic and then the writes the data to a google sheet.
 
 
-
-In this task I was asked to implement the Google Sheets service use-case as the consumer. Please view the changes in this google sheet:
+The results can be shown here:
 
 https://docs.google.com/spreadsheets/d/19uaEgcy-3D0ryYqibWz2JCl2L1vaCbYxPVAKeod5cJs/edit#gid=0
 
 
 
 To increase the scalability and to achieve eventual consistency we should implement a SQL based DB like Postgre. After the producer produces the data, a **worker-thread** should write the response to the Database and another **worker-thread** should read from the database and publish the kafka logs. This will ensure that the service is able to handle situations like power outages, lots of entries in a small amount of time etc. After this, the consumer service can stream the data as per their requirement.
-
-
-
-### Other Approach:
-
-Another approach to this problem could be to directly call the consumer services without the Middle Monster microservice but it can be problematic to scale this approach because as the no of responses increase it can become hard for the consumer to keep track.
 
 
 
