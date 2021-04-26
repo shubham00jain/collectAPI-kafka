@@ -1,4 +1,4 @@
-# Collect API Kafka broker
+# Collect API Microservice using Kafka broker
 
 
 This is a microservice called **Middle Monster** which **GETS** data from the Collect APIs servers and then a **producer** works on the data and **publishes** it to a **kafka broker**. The **consumers** then can subscribe to a particular topic of the broker and consume the data as per their need.
